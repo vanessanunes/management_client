@@ -129,6 +129,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
+
 STATICFILES_DIRS = [
     'static',
 ]
@@ -142,3 +144,5 @@ MEDIA_ROOT = 'media'
 LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = 'person_list'
+
+os.makedirs(STATIC_TMP, exist_ok=True)
