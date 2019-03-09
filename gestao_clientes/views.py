@@ -2,4 +2,5 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'index.html')
+    pass
+    # return render(request, 'index.html')
