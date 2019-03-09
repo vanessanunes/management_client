@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['gestaodeclientesporvanessa.herokuapp.com/']
+ALLOWED_HOSTS = ['gestaodeclientesporvanessa.herokuapp.com']
 
 
 # Application definition
@@ -79,8 +79,8 @@ WSGI_APPLICATION = 'gestao_clientes.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = { 
-    'default': config('DATABASES_URL', default=default_dburl, cast=dburl),
+DATABASES = {
+    'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
     }
 
 # DATABASES = {
@@ -142,4 +142,3 @@ LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = 'person_list'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
