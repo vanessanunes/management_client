@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    <h1>Seja bem vindo</h1>
+{% extends 'base.html' %}
+
+{% block title %} Sejam bem vindo! {% endblock %}
+
+
+{% block main %}
+<h1>Seja bem vindo</h1>
 
     {% if user.is_authenticated %}
         <p>Olá {{ user.username }}</p>
@@ -13,5 +13,4 @@
         <a href="{% url 'login' %}">Entrar</a>
     {% endif %}
     
-</body>
-</html>
+{% endblock %}
