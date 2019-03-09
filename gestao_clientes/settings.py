@@ -81,7 +81,7 @@ default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
 DATABASES = {
     'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
-    }
+}
 
 # DATABASES = {
 #     'default': {
@@ -127,11 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [
-    'estaticos',
+    'static',
 ]
+
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 
@@ -140,5 +142,3 @@ MEDIA_ROOT = 'media'
 LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = 'person_list'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
