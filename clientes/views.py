@@ -7,7 +7,7 @@ from .forms import PersonForm
 @login_required
 def persons_list(requests):
     persons = Person.objects.all()
-    print(persons)
+    # print(persons)
     return render(requests, 'person.html', {'persons': persons})
 
 
