@@ -109,3 +109,6 @@ venv.bak/
 
 # media
 media
+
+DS_Store
+.env
