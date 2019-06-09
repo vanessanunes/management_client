@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrapform',
     'clientes',
     'home',
 ]
@@ -129,10 +130,10 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATIC_TMP = os.path.join(BASE_DIR, 'static')
+STATIC_TMP = os.path.join(BASE_DIR, 'statics')
 
 STATICFILES_DIRS = [
-    'static',
+    'statics',
 ]
 
 STATIC_URL = '/static/'

@@ -1,19 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Persons</title>
-</head>
-<body>
-    <a href="{% url 'logout' %}">Sair</a>
-    <ul>
-    {% for person in persons %}
-        <li>
-            <a href="{% url 'person_update' person.id %}">{{ person.first_name }}</a> 
-            <a href="{% url 'person_delete' person.id %}">Deletar</a>
-        </li>
-    {% endfor %}
-    </ul>
+{% extends 'base.html' %}
 
-    <a href="{% url 'person_new' %}">Novo</a>
-</body>
-</html>
+{% block title %} Lista de Pessoas {% endblock %}
+
+{% block main %}
+
+<div class="row">
+    <div class="col">
+    </div>
+
+    <div class="col-6">
+        <h3>Listagem de clientes</h3>
+        <ul class="list-group">
+            {% for person in persons %}
+                <li class="list-group-item">
+                    <a href="{% url 'person_update' person.id %}">{{ person.first_name }}</a> 
+                    <a href="{% url 'person_delete' person.id %}" style="color: red;">
+                        <i class="fa fa-trash trash-item"></i>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <br>
+
+        <a href="{% url 'person_new' %}" class="btn btn-primary">Novo cliente</a>
+
+    </div>
+    <div class="col">
+        {% if user.is_authenticated %}
+            <p>Olá {{ user.username|title }} <a href="{% url 'logout' %}"><span class="badge badge-dark">Sair</span></a></p>
+        {% endif %}
+    </div>
+</div>
+   
+{% endblock %}
+
+
