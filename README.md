@@ -7,6 +7,11 @@ create a new virtual env:
 ```python -m venv venv```
 
 
+initialize the virtualenv:
+
+```python -m venv venv```
+
+
 install requirements:
 
 ```pip intall -r requirements.txt```
