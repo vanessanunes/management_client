@@ -112,3 +112,6 @@ media
 
 DS_Store
 .env
+
+# vscode
+.vscode/
